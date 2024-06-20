@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+}
+
+.Chover:hover {
+    color: rgba(255, 255, 255, .7) !important;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.gradient-text {
+    background-image: radial-gradient(circle, rgb(251, 255, 2), rgb(255, 146, 124), rgb(96, 0, 99));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    animation: bg-animation 5s infinite alternate;
+}
+
+.gradient-border {
+    /* border: 2px solid;
+    border-image: linear-gradient(to right, rgb(255, 154, 210), rgb(134, 194, 4), rgb(0, 0, 0)); */
+    
+    border: 2px solid;
+    border-image: radial-gradient(circle, rgb(255, 154, 210), rgb(134, 194, 4), rgb(0, 0, 0)) 1;
+    border-image-slice: 1;
+    animation: bg-animation 2s infinite alternate;
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+
+    100% {
+        background-position: right;
+    }
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    z-index: 10;
+    opacity: 0;
+    transition: all;
+    transition: all 0.5s;
+    width: 50vw;
+}
+
+.active {
+    transform: translateY(0px);
+    opacity: 1;
+    transition: all 0.5s;
+    width: 100%;
+}
+.reveal2 {
+    position: relative;
+    transform: translateX(150px);
+    z-index: 10;
+    opacity: 0;
+    transition: all;
+    transition: all 0.75s;
+    width: 50vw;
+}
+
+.active2 {
+    transform: translateX(0px);
+    opacity: 1;
+    transition: all 0.75s;
+    width: 100%;
+}
+
+#preloader {
+    background: #000 url('./img/circle-loader.gif') no-repeat center center;
+    height: 100%;
+    z-index: 100;
+    background-size: 20%;
+    width: 100vw !important;
+    padding: 66px;
+    position: fixed;
+    top: 0;
+}
+
+.heading {
+    opacity: 0;
+    transition: all 2s;
+    transform: translateY(150px);
+}
+
+.show {
+    opacity: 1;
+    transition: all 2s;
+    transform: translateY(0px);
+}
+
+.burger {
+    display: none;
+    /* Hidden by default */
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.burger.show1 {
+    display: flex;
+    /* Flex display when shown */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Assuming gap-6 is equivalent to 1.5rem */
+}
+
+
+.img1 {
+    background-image: url('./img/bgblue.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 120%;
+    border-radius: 28px;
+}
+
+.img2 {
+    background-image: url('./img/bglogo.webp');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 80%;
+    border-radius: 28px;
+}
+
+.img4 {
+    background-image: url("./img/bgblue2.jpg") !important;
+}
+
+.img3 {
+    background-image: url("./img/bgskeletob.webp") !important;
+}
+
+
+@media (min-width: 868px) {
+
+    /* Tailwind's md breakpoint is 768px */
+    .box {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 868px) {
+    /* Tailwind's md breakpoint is 768px */
+
+    .img1 {
+        width: 90%;
+    }
+
+    .img2 {
+        width: 90%;
+    }
+}
+
+.text-blue {
+    color: rgb(49, 153, 250);
+}
+
+.gradient-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 20px; 
+    background: radial-gradient(circle, rgb(255, 154, 210), rgb(134, 194, 4), rgb(2, 90, 255));
+    padding: 1px; /* This controls the width of the gradient border */
+  }
+  
+  .border-content {
+    border-radius: 20px; /* Same as gradient-container to ensure the border-radius matches */
+    background: white; 
+    padding: 0px; 
+  }
+
+  .content {
+    border-radius: 20px; /* Same as gradient-container to ensure the border-radius matches */
+    /* padding: 10px; Adjust padding as needed */
+  }
+
+  .problems{
+    padding-left: 32px;
+  }
